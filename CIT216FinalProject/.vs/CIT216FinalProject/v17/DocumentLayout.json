@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Github\\CIT216FinalProject\\CIT216FinalProject\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A46B6AE0-5D4B-E6BD-F582-D2BAC8BB54AC}|Assembly-CSharp.csproj|c:\\github\\cit216finalproject\\cit216finalproject\\assets\\scripts\\mechmovementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A46B6AE0-5D4B-E6BD-F582-D2BAC8BB54AC}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\mechmovementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A46B6AE0-5D4B-E6BD-F582-D2BAC8BB54AC}|Assembly-CSharp.csproj|c:\\github\\cit216finalproject\\cit216finalproject\\assets\\scripts\\glassshattercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A46B6AE0-5D4B-E6BD-F582-D2BAC8BB54AC}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\glassshattercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -23,6 +27,23 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "MechMovementController.cs",
+              "DocumentMoniker": "C:\\Github\\CIT216FinalProject\\CIT216FinalProject\\Assets\\Scripts\\MechMovementController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\MechMovementController.cs",
+              "ToolTip": "C:\\Github\\CIT216FinalProject\\CIT216FinalProject\\Assets\\Scripts\\MechMovementController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\MechMovementController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAABmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T21:05:23.973Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "GlassShatterController.cs",
               "DocumentMoniker": "C:\\Github\\CIT216FinalProject\\CIT216FinalProject\\Assets\\Scripts\\GlassShatterController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GlassShatterController.cs",
@@ -32,10 +53,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-06T18:16:08.965Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             }
           ]
         }
