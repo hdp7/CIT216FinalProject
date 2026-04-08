@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\GrowScale.cs" />
     <Compile Include="Assets\Scripts\MechMovementController.cs" />
     <Compile Include="Assets\AnimationStateController.cs" />
+    <Compile Include="Assets\ProjectileController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
