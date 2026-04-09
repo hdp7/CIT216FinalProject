@@ -32,13 +32,5 @@ public class GrowScale : MonoBehaviour
         // Ensure exact finish
         transform.localScale = maxSize;
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Glass"))
-        {
-            StartCoroutine(other.GetComponent<GlassShatterController>().Shatter());
-        }
-    }
 }
 

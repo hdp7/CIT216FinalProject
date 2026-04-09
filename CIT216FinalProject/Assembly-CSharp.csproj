@@ -62,11 +62,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\GlassShatterController.cs" />
-    <Compile Include="Assets\BlendTreeAnimationStateController.cs" />
     <Compile Include="Assets\Scripts\GrowScale.cs" />
     <Compile Include="Assets\Scripts\MechMovementController.cs" />
-    <Compile Include="Assets\AnimationStateController.cs" />
-    <Compile Include="Assets\ProjectileController.cs" />
+    <Compile Include="Assets\Scripts\BlendTreeAnimationStateController.cs" />
+    <Compile Include="Assets\Scripts\ProjectileController.cs" />
+    <Compile Include="Assets\Scripts\AnimationStateController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

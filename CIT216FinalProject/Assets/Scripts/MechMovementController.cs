@@ -8,6 +8,7 @@ public class MechMovementController : MonoBehaviour
     public enum MovementState {Ground, GroundBoost, Air, AirBoost};
     public MovementState state;
 
+    
     private Transform tf;
     private Rigidbody rb;
     public GameObject mech_legs;
@@ -56,14 +57,33 @@ public class MechMovementController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        Animator anim_upper = mech_upper.GetComponent<Animator>();
+        Animator anim_legs = mech_legs.GetComponent<Animator>();
+
+
         rb.linearVelocity = new Vector3(rb.linearVelocity.x + xMove * acceleration, 0, rb.linearVelocity.z + zMove * acceleration);
-        RotateLegs(new Vector2(xMove,zMove));
-       
+        
+        
+        if(rb.linearVelocity != Vector3.zero)
+        {
+            anim_upper.SetBool("IsWalking", true);
+            anim_legs.SetBool("IsWalking", true);
+        }
+        else
+        {
+            anim_upper.SetBool("IsWalking", false);
+            anim_legs.SetBool("IsWalking", false);
+        }
+
+            RotateLegs(new Vector2(xMove, zMove));
     }
 
+
+    //Rotates legs depending on movement 
     void RotateLegs(Vector2 move)
     {
         Transform legs = mech_legs.GetComponent<Transform>();
+
 
         if (move.sqrMagnitude < .001f)
             return;
@@ -104,5 +124,13 @@ public class MechMovementController : MonoBehaviour
         rb.linearVelocity = new Vector3(rb.linearVelocity.x, rb.linearVelocity.y + jumpHeight*acceleration, rb.linearVelocity.z);
     }
 
+    public void OnAttack(InputAction.CallbackContext context)
+    {
+        bool attackPressed = context.ReadValueAsButton();
+        Animator anim_upper = mech_upper.GetComponent<Animator>();
+        Debug.Log("Attack Pressed:" + context.ReadValueAsButton());
+
+        anim_upper.SetBool("IsShooting", attackPressed);
+    }
 }
 

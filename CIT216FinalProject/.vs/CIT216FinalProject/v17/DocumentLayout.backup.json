@@ -3,19 +3,27 @@
   "WorkspaceRootPath": "C:\\Github\\CIT216FinalProject\\CIT216FinalProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A46B6AE0-5D4B-E6BD-F582-D2BAC8BB54AC}|Assembly-CSharp.csproj|c:\\github\\cit216finalproject\\cit216finalproject\\assets\\projectilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A46B6AE0-5D4B-E6BD-F582-D2BAC8BB54AC}|Assembly-CSharp.csproj|solutionrelative:assets\\projectilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Github\\CIT216FinalProject\\CIT216FinalProject\\Assets\\Projectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Projectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A46B6AE0-5D4B-E6BD-F582-D2BAC8BB54AC}|Assembly-CSharp.csproj|c:\\github\\cit216finalproject\\cit216finalproject\\assets\\scripts\\projectilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A46B6AE0-5D4B-E6BD-F582-D2BAC8BB54AC}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\projectilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A46B6AE0-5D4B-E6BD-F582-D2BAC8BB54AC}|Assembly-CSharp.csproj|C:\\Github\\CIT216FinalProject\\CIT216FinalProject\\assets\\scripts\\mechmovementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A46B6AE0-5D4B-E6BD-F582-D2BAC8BB54AC}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\mechmovementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A46B6AE0-5D4B-E6BD-F582-D2BAC8BB54AC}|Assembly-CSharp.csproj|C:\\Github\\CIT216FinalProject\\CIT216FinalProject\\assets\\scripts\\glassshattercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Github\\CIT216FinalProject\\CIT216FinalProject\\Assets\\ProjectileController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\ProjectileController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A46B6AE0-5D4B-E6BD-F582-D2BAC8BB54AC}|Assembly-CSharp.csproj|c:\\github\\cit216finalproject\\cit216finalproject\\assets\\scripts\\growscale.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A46B6AE0-5D4B-E6BD-F582-D2BAC8BB54AC}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\growscale.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Github\\CIT216FinalProject\\CIT216FinalProject\\Assets\\Projectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Projectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A46B6AE0-5D4B-E6BD-F582-D2BAC8BB54AC}|Assembly-CSharp.csproj|c:\\github\\cit216finalproject\\cit216finalproject\\assets\\scripts\\glassshattercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A46B6AE0-5D4B-E6BD-F582-D2BAC8BB54AC}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\glassshattercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -36,13 +44,26 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "ProjectileController.cs",
-              "DocumentMoniker": "C:\\Github\\CIT216FinalProject\\CIT216FinalProject\\Assets\\ProjectileController.cs",
-              "RelativeDocumentMoniker": "Assets\\ProjectileController.cs",
-              "ToolTip": "C:\\Github\\CIT216FinalProject\\CIT216FinalProject\\Assets\\ProjectileController.cs",
-              "RelativeToolTip": "Assets\\ProjectileController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAfAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Github\\CIT216FinalProject\\CIT216FinalProject\\Assets\\Scripts\\ProjectileController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ProjectileController.cs",
+              "ToolTip": "C:\\Github\\CIT216FinalProject\\CIT216FinalProject\\Assets\\Scripts\\ProjectileController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ProjectileController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-08T20:16:56.146Z",
+              "WhenOpened": "2026-04-09T14:29:54.519Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GrowScale.cs",
+              "DocumentMoniker": "C:\\Github\\CIT216FinalProject\\CIT216FinalProject\\Assets\\Scripts\\GrowScale.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GrowScale.cs",
+              "ToolTip": "C:\\Github\\CIT216FinalProject\\CIT216FinalProject\\Assets\\Scripts\\GrowScale.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GrowScale.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T13:45:56.738Z",
               "EditorCaption": ""
             },
             {
@@ -51,7 +72,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "ProjectileController.cs",
+              "DocumentMoniker": "C:\\Github\\CIT216FinalProject\\CIT216FinalProject\\Assets\\ProjectileController.cs",
+              "RelativeDocumentMoniker": "Assets\\ProjectileController.cs",
+              "ToolTip": "C:\\Github\\CIT216FinalProject\\CIT216FinalProject\\Assets\\ProjectileController.cs",
+              "RelativeToolTip": "Assets\\ProjectileController.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-08T20:16:56.146Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Projectile.cs",
               "DocumentMoniker": "C:\\Github\\CIT216FinalProject\\CIT216FinalProject\\Assets\\Projectile.cs",
               "RelativeDocumentMoniker": "Assets\\Projectile.cs",
@@ -62,27 +94,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "MechMovementController.cs",
               "DocumentMoniker": "C:\\Github\\CIT216FinalProject\\CIT216FinalProject\\Assets\\Scripts\\MechMovementController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\MechMovementController.cs",
               "ToolTip": "C:\\Github\\CIT216FinalProject\\CIT216FinalProject\\Assets\\Scripts\\MechMovementController.cs",
               "RelativeToolTip": "Assets\\Scripts\\MechMovementController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAABmAAAAAAAAAA==",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAowIQAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-06T21:05:23.973Z"
+              "WhenOpened": "2026-04-06T21:05:23.973Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "GlassShatterController.cs",
               "DocumentMoniker": "C:\\Github\\CIT216FinalProject\\CIT216FinalProject\\Assets\\Scripts\\GlassShatterController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GlassShatterController.cs",
               "ToolTip": "C:\\Github\\CIT216FinalProject\\CIT216FinalProject\\Assets\\Scripts\\GlassShatterController.cs",
               "RelativeToolTip": "Assets\\Scripts\\GlassShatterController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-06T18:16:08.965Z"
+              "WhenOpened": "2026-04-06T18:16:08.965Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -31,11 +31,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: metarig|LeftArmShoot (1)
-      takeName: metarig|LeftArmShoot
+      name: metarig|Jump
+      takeName: metarig|Jump
       internalID: -5324238279805231817
       firstFrame: 0
-      lastFrame: 36
+      lastFrame: 18
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -60,7 +60,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: metarig|Idle (1)
+      name: metarig|Idle
       takeName: metarig|Idle
       internalID: 3819204733282340162
       firstFrame: 0
@@ -92,7 +92,7 @@ ModelImporter:
       name: metarig|LeftArmShoot
       takeName: metarig|LeftArmShoot
       internalID: 5445125995971692178
-      firstFrame: 0
+      firstFrame: 12
       lastFrame: 36
       wrapMode: 0
       orientationOffsetY: 0
@@ -100,7 +100,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
