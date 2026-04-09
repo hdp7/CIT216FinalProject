@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Github\\CIT216FinalProject\\CIT216FinalProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A46B6AE0-5D4B-E6BD-F582-D2BAC8BB54AC}|Assembly-CSharp.csproj|c:\\github\\cit216finalproject\\cit216finalproject\\assets\\projectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A46B6AE0-5D4B-E6BD-F582-D2BAC8BB54AC}|Assembly-CSharp.csproj|solutionrelative:assets\\projectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A46B6AE0-5D4B-E6BD-F582-D2BAC8BB54AC}|Assembly-CSharp.csproj|c:\\github\\cit216finalproject\\cit216finalproject\\assets\\projectilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A46B6AE0-5D4B-E6BD-F582-D2BAC8BB54AC}|Assembly-CSharp.csproj|solutionrelative:assets\\projectilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Github\\CIT216FinalProject\\CIT216FinalProject\\Assets\\Projectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Projectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A46B6AE0-5D4B-E6BD-F582-D2BAC8BB54AC}|Assembly-CSharp.csproj|C:\\Github\\CIT216FinalProject\\CIT216FinalProject\\assets\\scripts\\mechmovementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -22,11 +26,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProjectileController.cs",
+              "DocumentMoniker": "C:\\Github\\CIT216FinalProject\\CIT216FinalProject\\Assets\\ProjectileController.cs",
+              "RelativeDocumentMoniker": "Assets\\ProjectileController.cs",
+              "ToolTip": "C:\\Github\\CIT216FinalProject\\CIT216FinalProject\\Assets\\ProjectileController.cs",
+              "RelativeToolTip": "Assets\\ProjectileController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-08T20:16:56.146Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -34,20 +51,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Projectile.cs",
               "DocumentMoniker": "C:\\Github\\CIT216FinalProject\\CIT216FinalProject\\Assets\\Projectile.cs",
               "RelativeDocumentMoniker": "Assets\\Projectile.cs",
               "ToolTip": "C:\\Github\\CIT216FinalProject\\CIT216FinalProject\\Assets\\Projectile.cs",
               "RelativeToolTip": "Assets\\Projectile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-08T20:16:08.495Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-08T20:16:08.495Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "MechMovementController.cs",
               "DocumentMoniker": "C:\\Github\\CIT216FinalProject\\CIT216FinalProject\\Assets\\Scripts\\MechMovementController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\MechMovementController.cs",
@@ -59,7 +74,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "GlassShatterController.cs",
               "DocumentMoniker": "C:\\Github\\CIT216FinalProject\\CIT216FinalProject\\Assets\\Scripts\\GlassShatterController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GlassShatterController.cs",
