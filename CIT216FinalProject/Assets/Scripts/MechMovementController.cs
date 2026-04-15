@@ -24,6 +24,7 @@ public class MechMovementController : MonoBehaviour
     public float xMove;
     public float zMove;
     public Vector2 lookVector;
+    private bool onGround;
     
 
     public float lookSensitivity = 10f;
@@ -61,7 +62,7 @@ public class MechMovementController : MonoBehaviour
         Animator anim_legs = mech_legs.GetComponent<Animator>();
 
 
-        rb.linearVelocity = new Vector3(rb.linearVelocity.x + xMove * acceleration, 0, rb.linearVelocity.z + zMove * acceleration);
+        rb.linearVelocity = new Vector3(rb.linearVelocity.x + xMove * acceleration, rb.linearVelocity.y , rb.linearVelocity.z + zMove * acceleration);
         
         
         if(rb.linearVelocity != Vector3.zero)
@@ -121,7 +122,11 @@ public class MechMovementController : MonoBehaviour
     public void OnJump(InputAction.CallbackContext context)
     {
         Debug.Log("Jump Pressed:" + context.ReadValueAsButton());
-        rb.linearVelocity = new Vector3(rb.linearVelocity.x, rb.linearVelocity.y + jumpHeight*acceleration, rb.linearVelocity.z);
+        if (onGround)
+        {
+            rb.linearVelocity = new Vector3(rb.linearVelocity.x, rb.linearVelocity.y + jumpHeight * acceleration, rb.linearVelocity.z);
+            onGround = false;
+        }
     }
 
     public void OnAttack(InputAction.CallbackContext context)
@@ -131,6 +136,16 @@ public class MechMovementController : MonoBehaviour
         Debug.Log("Attack Pressed:" + context.ReadValueAsButton());
 
         anim_upper.SetBool("IsShooting", attackPressed);
+    }
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag("Ground"))
+        {
+            Debug.Log("Is Grounded: " + onGround);
+            onGround = true;
+        }
     }
 }
 

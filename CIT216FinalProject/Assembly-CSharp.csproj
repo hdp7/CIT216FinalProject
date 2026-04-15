@@ -1187,6 +1187,10 @@
       <Project>{2C2D2303-7361-D91C-A168-7290614E4FC8}</Project>
       <Name>Unity.Services.Analytics</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.Cinemachine.Editor.csproj">
+      <Project>{C3D90B29-F813-967E-7C42-1A3DFC8B9CE5}</Project>
+      <Name>Unity.Cinemachine.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.Analytics.DataPrivacy.csproj">
       <Project>{2DF35C36-FC21-1E24-3DED-880CC41766DC}</Project>
       <Name>Unity.Analytics.DataPrivacy</Name>
@@ -1219,6 +1223,10 @@
       <Project>{49B20CE4-D775-2C83-C933-D7FA5299BFAD}</Project>
       <Name>UnityEngine.Advertisements</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.Splines.csproj">
+      <Project>{2AF96657-A218-2719-C0EE-E1419CF6A11C}</Project>
+      <Name>Unity.Splines</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.Mathematics.Editor.csproj">
       <Project>{F5360DFF-702E-8153-25BE-CE55184DEC00}</Project>
       <Name>Unity.Mathematics.Editor</Name>
@@ -1226,6 +1234,10 @@
     <ProjectReference Include="UnityEditor.XR.LegacyInputHelpers.csproj">
       <Project>{C762BA9D-467F-C79E-2FA4-16E83526CAE7}</Project>
       <Name>UnityEditor.XR.LegacyInputHelpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Cinemachine.csproj">
+      <Project>{5F3A6A17-E79C-383D-7790-70D73A3694F2}</Project>
+      <Name>Unity.Cinemachine</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Collections.csproj">
       <Project>{7082C595-95BC-0194-0F8B-F72B1150B28E}</Project>
@@ -1238,6 +1250,10 @@
     <ProjectReference Include="Unity.VisualScripting.Core.csproj">
       <Project>{1DB1C1FC-68C8-6C90-7C13-C5BD5D879C7A}</Project>
       <Name>Unity.VisualScripting.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Splines.Editor.csproj">
+      <Project>{1374C7A5-8040-B622-FEAD-2DD3055D85DA}</Project>
+      <Name>Unity.Splines.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.Purchasing.SecurityStub.csproj">
       <Project>{C74AA353-EEF0-8AFC-E970-512F543C52EC}</Project>
@@ -1290,6 +1306,10 @@
     <ProjectReference Include="Unity.Mathematics.csproj">
       <Project>{99F0E1B2-59DA-A896-B5C0-B48457514F09}</Project>
       <Name>Unity.Mathematics</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Settings.Editor.csproj">
+      <Project>{39C7B8A5-986F-5065-4FA6-AE389A5D96EE}</Project>
+      <Name>Unity.Settings.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Analytics.csproj">
       <Project>{0B15BB5B-C5B5-DD11-1B10-DF9D6C9B3931}</Project>

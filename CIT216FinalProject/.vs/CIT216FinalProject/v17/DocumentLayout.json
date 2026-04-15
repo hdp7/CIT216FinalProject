@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Github\\CIT216FinalProject\\CIT216FinalProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A46B6AE0-5D4B-E6BD-F582-D2BAC8BB54AC}|Assembly-CSharp.csproj|c:\\github\\cit216finalproject\\cit216finalproject\\assets\\scripts\\projectilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A46B6AE0-5D4B-E6BD-F582-D2BAC8BB54AC}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\projectilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A46B6AE0-5D4B-E6BD-F582-D2BAC8BB54AC}|Assembly-CSharp.csproj|C:\\Github\\CIT216FinalProject\\CIT216FinalProject\\assets\\scripts\\mechmovementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A46B6AE0-5D4B-E6BD-F582-D2BAC8BB54AC}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\mechmovementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A46B6AE0-5D4B-E6BD-F582-D2BAC8BB54AC}|Assembly-CSharp.csproj|c:\\github\\cit216finalproject\\cit216finalproject\\assets\\scripts\\projectilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A46B6AE0-5D4B-E6BD-F582-D2BAC8BB54AC}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\projectilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Github\\CIT216FinalProject\\CIT216FinalProject\\Assets\\ProjectileController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,19 +34,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 6,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ProjectileController.cs",
               "DocumentMoniker": "C:\\Github\\CIT216FinalProject\\CIT216FinalProject\\Assets\\Scripts\\ProjectileController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ProjectileController.cs",
@@ -93,15 +93,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "MechMovementController.cs",
               "DocumentMoniker": "C:\\Github\\CIT216FinalProject\\CIT216FinalProject\\Assets\\Scripts\\MechMovementController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\MechMovementController.cs",
               "ToolTip": "C:\\Github\\CIT216FinalProject\\CIT216FinalProject\\Assets\\Scripts\\MechMovementController.cs",
               "RelativeToolTip": "Assets\\Scripts\\MechMovementController.cs",
-              "ViewState": "AgIAAFoAAAAAAAAAAAAowIQAAAA4AAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAYwEAAAABUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-06T21:05:23.973Z"
+              "WhenOpened": "2026-04-06T21:05:23.973Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
