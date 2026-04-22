@@ -119,8 +119,8 @@
     <Compile Include="Library\PackageCache\com.unity.services.core@9e81a5e38245\Editor\Core\Environments\Client\ErrorMitigation\IRetryPolicy.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.core@9e81a5e38245\Editor\Core\Environments\Client\Models\UnityUserOrganizationsV1OrganizationsInner.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.core@9e81a5e38245\Editor\Core\Environments\AssemblyInfo.cs" />
-    <Compile Include="Library\PackageCache\com.unity.services.core@9e81a5e38245\Editor\Core\Environments\ProjectInfo.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.core@9e81a5e38245\Editor\Core\Environments\EnvironmentsConstants.cs" />
+    <Compile Include="Library\PackageCache\com.unity.services.core@9e81a5e38245\Editor\Core\Environments\ProjectInfo.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.core@9e81a5e38245\Editor\Core\Environments\Client\Apis\DefaultApiRequests.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.core@9e81a5e38245\Editor\Core\Environments\Client\Scheduler\ThreadHelper.cs" />
     <Compile Include="Library\PackageCache\com.unity.services.core@9e81a5e38245\Editor\Core\Environments\Client\Http\JsonObject.cs" />

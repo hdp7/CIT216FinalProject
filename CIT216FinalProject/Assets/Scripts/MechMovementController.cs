@@ -1,15 +1,17 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.Windows;
 public class MechMovementController : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public enum MovementState {Ground, GroundBoost, Air, AirBoost};
+    public enum MovementState { Ground, GroundBoost, Air, AirBoost };
     public MovementState state;
 
-    
+
     private Transform tf;
+    public Transform playerCamera;
     private Rigidbody rb;
     public GameObject mech_legs;
     public GameObject mech_upper;
@@ -25,11 +27,12 @@ public class MechMovementController : MonoBehaviour
     public float zMove;
     public Vector2 lookVector;
     private bool onGround;
-    
+    public float gravity;
 
     public float lookSensitivity = 10f;
     public float minPitch = -40f;
     public float maxPitch = 80f;
+
     float yaw;
     float pitch;
 
@@ -58,47 +61,58 @@ public class MechMovementController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+
         Animator anim_upper = mech_upper.GetComponent<Animator>();
         Animator anim_legs = mech_legs.GetComponent<Animator>();
 
 
-        rb.linearVelocity = new Vector3(rb.linearVelocity.x + xMove * acceleration, rb.linearVelocity.y , rb.linearVelocity.z + zMove * acceleration);
-        
-        
-        if(rb.linearVelocity != Vector3.zero)
-        {
-            anim_upper.SetBool("IsWalking", true);
-            anim_legs.SetBool("IsWalking", true);
-        }
-        else
-        {
-            anim_upper.SetBool("IsWalking", false);
-            anim_legs.SetBool("IsWalking", false);
-        }
+        Vector3 camForward = playerCamera.forward;
+        Vector3 camRight = playerCamera.right;
 
-            RotateLegs(new Vector2(xMove, zMove));
+        camForward.y = 0f;
+        camRight.y = 0f;
+
+        camForward.Normalize();
+        camRight.Normalize();
+
+        Vector3 moveDir = camForward * zMove + camRight * xMove;
+
+        Vector3 velocity = rb.linearVelocity;
+        Vector3 targetVelocity = moveDir * Time.fixedDeltaTime * acceleration;
+
+        velocity.x = targetVelocity.x;
+        velocity.z = targetVelocity.z;
+        velocity.y -= gravity * Time.fixedDeltaTime;
+
+
+        rb.linearVelocity = velocity;
+
+        bool isMoving = moveDir.sqrMagnitude > 0.01f;
+        anim_upper.SetBool("IsWalking", isMoving);
+        anim_legs.SetBool("IsWalking", isMoving);
+
+        //RotateLegs(moveDir);
+
     }
 
 
     //Rotates legs depending on movement 
-    void RotateLegs(Vector2 move)
-    {
-        Transform legs = mech_legs.GetComponent<Transform>();
+    //void RotateLegs(Vector3 move)
+    //{
+    //    Transform legs = mech_legs.GetComponent<Transform>();
 
 
-        if (move.sqrMagnitude < .001f)
-            return;
+    //    if (move.sqrMagnitude < .001f)
+    //        return;
 
+    //    Quaternion targetRotation = Quaternion.LookRotation(move, Vector3.up);
 
-        Vector3 direction = new Vector3(move.x - 90, 0f, move.y- 90);
-        Quaternion targetRotation = Quaternion.LookRotation(direction);
+    //        mech_legs.transform.rotation = Quaternion.Slerp(
+    //        mech_legs.transform.rotation,
+    //        targetRotation,
+    //        Time.deltaTime * rotateSpeed);
+    //}
 
-        legs.rotation = Quaternion.Slerp(
-            legs.rotation,
-            targetRotation,
-            Time.deltaTime * rotateSpeed);
-    }
-    
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -107,26 +121,32 @@ public class MechMovementController : MonoBehaviour
         zMove = context.ReadValue<Vector2>().y;
         xMove = context.ReadValue<Vector2>().x;
     }
-    public void OnLook(InputAction.CallbackContext context)
-    {
-        //Debug.Log("Look X value:" + context.ReadValue<Vector2>().x);
-        //Debug.Log("Look Y:Value" + context.ReadValue<Vector2>().y);
-        lookVector = context.ReadValue<Vector2>();
-    }
+    //public void OnLook(InputAction.CallbackContext context)
+    //{
+    //    //Debug.Log("Look X value:" + context.ReadValue<Vector2>().x);
+    //    //Debug.Log("Look Y:Value" + context.ReadValue<Vector2>().y);
+    //    lookVector = context.ReadValue<Vector2>();
+    //}
 
     public void OnBoost(InputAction.CallbackContext context)
     {
         Debug.Log("Boost Pressed:" + context.ReadValueAsButton());
+
     }
 
     public void OnJump(InputAction.CallbackContext context)
     {
         Debug.Log("Jump Pressed:" + context.ReadValueAsButton());
-        if (onGround)
-        {
-            rb.linearVelocity = new Vector3(rb.linearVelocity.x, rb.linearVelocity.y + jumpHeight * acceleration, rb.linearVelocity.z);
-            onGround = false;
-        }
+
+        if (!context.performed || !onGround) return;
+
+        rb.linearVelocity = new Vector3(
+            rb.linearVelocity.x,
+            jumpHeight,
+            rb.linearVelocity.z
+        );
+        onGround = false;
+
     }
 
     public void OnAttack(InputAction.CallbackContext context)
@@ -147,5 +167,6 @@ public class MechMovementController : MonoBehaviour
             onGround = true;
         }
     }
+
 }
 
