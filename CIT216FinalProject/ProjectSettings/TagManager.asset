@@ -8,6 +8,7 @@ TagManager:
   - Shatter
   - Projectile
   - Ground
+  - EnemyProj
   layers:
   - Default
   - TransparentFX

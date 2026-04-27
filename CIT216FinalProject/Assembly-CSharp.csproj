@@ -62,13 +62,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Spin.cs" />
+    <Compile Include="Assets\Scripts\EnemyHitController.cs" />
     <Compile Include="Assets\Scripts\GlassShatterController.cs" />
+    <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\EventManager.cs" />
     <Compile Include="Assets\Scripts\GrowScale.cs" />
     <Compile Include="Assets\Scripts\MechMovementController.cs" />
     <Compile Include="Assets\SliderGradient.cs" />
     <Compile Include="Assets\Scripts\BlendTreeAnimationStateController.cs" />
     <Compile Include="Assets\Scripts\ProjectileController.cs" />
     <Compile Include="Assets\Scripts\AnimationStateController.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
