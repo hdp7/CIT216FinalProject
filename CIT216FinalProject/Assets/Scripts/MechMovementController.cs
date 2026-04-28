@@ -8,10 +8,6 @@ using UnityEngine.Windows;
 public class MechMovementController : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public enum MovementState { Normal, Boosted, Dea};
-    public MovementState state;
-
-
     private Transform tf;
     public Transform playerCamera;
     private Rigidbody rb;
@@ -19,24 +15,31 @@ public class MechMovementController : MonoBehaviour
     public GameObject mech_upper;
     public GameObject cameraPivot;
     private PlayerInput playerInput;
+    private PlayerController playerController;
 
     public float friction;
     public float rotateSpeed = 10f;
-    public float acceleration = 1f;
-    public float maxSpeed = 5f;
+    public float acceleration = 1000f;
     public float jumpHeight = 5f;
     public float xMove;
     public float zMove;
     public Vector2 lookVector;
     private bool onGround;
     public float gravity;
-    public bool isShooting;
+    private bool isShooting;
+    private bool boostActive = false;
 
     public float lookSensitivity = 10f;
     public float minPitch = -40f;
     public float maxPitch = 80f;
     public float maxBoost;
     public float maxHealth;
+    float normalAcceleration;
+    float normalRotateSpeed;
+    float normalJumpHeight;
+    float boostAcceleration;
+    float boostRotateSpeed;
+    float boostjumpHeight;
 
 
     public GameObject crosshair;
@@ -54,11 +57,29 @@ public class MechMovementController : MonoBehaviour
         tf = gameObject.GetComponent<Transform>();
         rb = gameObject.GetComponent<Rigidbody>();
         playerInput = gameObject.GetComponent<PlayerInput>();
+        playerController = gameObject.GetComponent<PlayerController>();
+        normalAcceleration = acceleration;
+        normalRotateSpeed = rotateSpeed;
+        normalJumpHeight = jumpHeight;
+        boostAcceleration = acceleration * 5;
+        boostRotateSpeed = rotateSpeed * 2;
+        boostjumpHeight = jumpHeight * 1.25f;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (boostActive)
+        {
+            acceleration = boostAcceleration;
+            rotateSpeed = boostRotateSpeed;
+            jumpHeight = boostjumpHeight;
+        }else
+        {
+            acceleration = normalAcceleration;
+            rotateSpeed = normalRotateSpeed;
+            jumpHeight = normalJumpHeight;
+        }
         Rigidbody2D rbCrosshair = crosshair.GetComponent<Rigidbody2D>();
         RectTransform rtCrosshair = crosshair.GetComponent<RectTransform>();
         Transform upper = mech_upper.GetComponent<Transform>();
@@ -118,7 +139,7 @@ public class MechMovementController : MonoBehaviour
         Transform legs = mech_legs.GetComponent<Transform>();
         Transform upper = mech_upper.GetComponent<Transform>();
 
-        if (isShooting && move.sqrMagnitude < .001f)
+        if (isShooting || move.sqrMagnitude < .001f)
             return;
 
         Quaternion targetRotation = Quaternion.LookRotation(move, Vector3.up);
@@ -142,20 +163,22 @@ public class MechMovementController : MonoBehaviour
     }
     public void OnLook(InputAction.CallbackContext context)
     {
-        Debug.Log("Look X value:" + context.ReadValue<Vector2>().x);
-        Debug.Log("Look Y:Value" + context.ReadValue<Vector2>().y);
+        //Debug.Log("Look X value:" + context.ReadValue<Vector2>().x);
+        //Debug.Log("Look Y:Value" + context.ReadValue<Vector2>().y);
         lookVector = context.ReadValue<Vector2>();
     }
 
     public void OnBoost(InputAction.CallbackContext context)
     {
-        Debug.Log("Boost Pressed:" + context.ReadValueAsButton());
-
+        if (!context.performed)
+            return;
+        boostActive = !boostActive;
+        Debug.Log("Boost Pressed:" + boostActive);
     }
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        Debug.Log("Jump Pressed:" + context.ReadValueAsButton());
+        //Debug.Log("Jump Pressed:" + context.ReadValueAsButton());
 
         if (!context.performed || !onGround) return;
 
@@ -172,7 +195,7 @@ public class MechMovementController : MonoBehaviour
     {
         bool attackPressed = context.ReadValueAsButton();
         isShooting = attackPressed;
-        Debug.Log("Attack Pressed:" + context.ReadValueAsButton());
+        //Debug.Log("Attack Pressed:" + context.ReadValueAsButton());
 
     }
 
@@ -181,7 +204,7 @@ public class MechMovementController : MonoBehaviour
     {
         if (collision.collider.CompareTag("Ground"))
         {
-            Debug.Log("Is Grounded: " + onGround);
+            //Debug.Log("Is Grounded: " + onGround);
             onGround = true;
         }
     }

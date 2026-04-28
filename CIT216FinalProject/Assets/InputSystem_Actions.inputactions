@@ -455,7 +455,7 @@
                     "name": "",
                     "id": "cac264c9-c1aa-42b1-a47f-20c3e8ba5473",
                     "path": "<Gamepad>/buttonEast",
-                    "interactions": "",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": ";Gamepad",
                     "action": "Boost",
