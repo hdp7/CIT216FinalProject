@@ -1,10 +1,11 @@
+//4/29/26
+//Herman Pagan Alvarez
+//Handles the glass's shattering effect seen on buildings
 using System.Collections;
 using UnityEngine;
-
 public class GlassShatterController : MonoBehaviour
 {
     private MeshRenderer mr;
-    private bool isBroken = false;
     public ParticleSystem glassParticles;
     private BoxCollider col;
 

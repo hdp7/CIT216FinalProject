@@ -1,7 +1,9 @@
+//4/29/26
+//Herman Pagan Alvarez
+//Controller for the Helicopter's missiles
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
-
 public class MissileController : MonoBehaviour
 {
     private Rigidbody rb;
@@ -25,15 +27,6 @@ public class MissileController : MonoBehaviour
         rb.AddForce(force);
     }
 
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            PlayerController.Instance.TakeDamage(damage);
-            Destroy(gameObject);
-        }
-    }
     private void OnCollisionEnter(Collision collision)
     {
         Instantiate(explosion, transform.position, transform.rotation);

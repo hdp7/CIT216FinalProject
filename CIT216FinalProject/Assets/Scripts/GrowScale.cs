@@ -1,6 +1,8 @@
+//4/29/26
+//Herman Pagan Alvarez
+//Scale the gameobject with given parameters
 using System.Collections;
 using UnityEngine;
-
 public class GrowScale : MonoBehaviour
 {
     public Vector3 maxSize;

@@ -1,3 +1,6 @@
+//4/29/26
+//Herman Pagan Alvarez
+//Handles the mech's movement, animation, and crosshair
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -17,7 +20,8 @@ public class MechMovementController : MonoBehaviour
     private PlayerInput playerInput;
     private PlayerController playerController;
 
-    public float friction;
+    public float damping;
+    public float boostDamping;
     public float rotateSpeed = 10f;
     public float acceleration = 1000f;
     public float jumpHeight = 5f;
@@ -41,7 +45,6 @@ public class MechMovementController : MonoBehaviour
 
 
     public GameObject crosshair;
-    public Vector2 chOffset;
 
 
     private float yaw;
@@ -67,12 +70,15 @@ public class MechMovementController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        crosshair.SetActive(isShooting);
         if (boostActive)
         {
             acceleration = boostAcceleration;
             rotateSpeed = boostRotateSpeed;
             jumpHeight = boostjumpHeight;
-        }else
+            rb.angularDamping = boostDamping;
+        }
+        else
         {
             acceleration = normalAcceleration;
             rotateSpeed = normalRotateSpeed;
@@ -96,11 +102,8 @@ public class MechMovementController : MonoBehaviour
 
         camForward.Normalize();
         camRight.Normalize();
-
-
-
-        crosshair.SetActive(isShooting);
-        //Only when shooting
+        
+        //Fixed upper rotation only while shooting
         if (isShooting)
         {
             upper.rotation = tf.rotation;
@@ -125,6 +128,12 @@ public class MechMovementController : MonoBehaviour
         velocity.z = targetVelocity.z;
         velocity.y -= gravity * Time.fixedDeltaTime;
         rb.linearVelocity = velocity;
+        
+        //Turn off boost when not moving
+        if (rb.linearVelocity.sqrMagnitude < 5f)
+        {
+            boostActive = false;
+        }
 
         bool isMoving = moveDir.sqrMagnitude > 0.01f;
         anim_upper.SetBool("IsWalking", isMoving);
@@ -194,7 +203,12 @@ public class MechMovementController : MonoBehaviour
         bool attackPressed = context.ReadValueAsButton();
         isShooting = attackPressed;
         //Debug.Log("Attack Pressed:" + context.ReadValueAsButton());
-
+        if (!context.canceled)
+        {
+            RectTransform rtCrosshair = crosshair.GetComponent<RectTransform>();
+            rtCrosshair.anchoredPosition = Vector2.zero;
+            return;
+        } 
     }
 
 

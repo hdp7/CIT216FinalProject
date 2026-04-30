@@ -6,7 +6,6 @@ using static System.Net.Mime.MediaTypeNames;
 
 public class PlayerController : MonoBehaviour
 {
-    public static PlayerController Instance { get; private set; }
     private float health;
     private float boostAmount;
     public float maxHealth;
@@ -15,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private float damageAmount;
     private float damageInterval = .5f; 
     private MechMovementController movement;
+    private Rigidbody rb;
 
 
     private ParticleSystem explosion;
@@ -23,8 +23,8 @@ public class PlayerController : MonoBehaviour
     public Slider healthSlider;
     public Slider boostSlider;
     public float fillRate;
-
-    private UnityAction<float> damageListener;
+    private bool boostExhausted;
+    private float boostCooldown;
 
     public float Health
     {
@@ -39,7 +39,6 @@ public class PlayerController : MonoBehaviour
             {
                 Debug.Log("Player is Dead");
                 isDead = true;
-                StartCoroutine("Death");
             }
         }
     }
@@ -47,18 +46,11 @@ public class PlayerController : MonoBehaviour
     void OnEnable()
     {
         movement = GetComponent<MechMovementController>();
-        damageListener = new UnityAction<float>(TakeDamage);
-        //subscribes to the event
-        EventManager.StartListening("PlayerDamager", damageListener);
-    }
-    void OnDisable()
-    {
-        EventManager.StopListening("PlayerDamager", damageListener);
     }
 
     private void Start()
     {
-        StartCoroutine(Fill());
+        rb = GetComponent<Rigidbody>();
         boostSlider.maxValue = maxBoost;
         boostSlider.value = boostSlider.maxValue;
         health = maxHealth;
@@ -84,6 +76,45 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        HandleBoost();
+    }
+
+    private void HandleBoost()
+    {
+        bool isBoosting = movement.boostActive;
+        //Cooldown
+        if (boostExhausted)
+        {
+            boostCooldown -= Time.deltaTime;
+            movement.boostActive = false;
+            if (boostCooldown <= 0f)
+            {
+                boostExhausted = false;
+            }
+
+            return;
+        }
+
+        if (isBoosting && boostSlider.value > 0)
+        {
+            boostSlider.value -= fillRate * Time.deltaTime;
+            //Temporarily disable boost if boost is fully used up
+            if (boostSlider.value <= 0)
+            {
+                rb.linearVelocity = Vector3.zero;
+                boostSlider.value = 0;
+                boostExhausted = true;
+                boostCooldown = 3f;
+                movement.boostActive = false;
+            }
+        }
+        else if (!isBoosting && boostSlider.value < maxBoost)
+        {
+            Debug.Log("Recovering Boost");
+            boostSlider.value += fillRate * Time.deltaTime;
+        }
+        //Avoid over/under flow
+        boostSlider.value = Mathf.Clamp(boostSlider.value, 0f, maxBoost);
     }
     public void Death()
     {
@@ -92,26 +123,5 @@ public class PlayerController : MonoBehaviour
         smoke.Play();
         HUD.SetActive(false);
         movement.enabled = false;
-    }
-
-    IEnumerator Fill()
-    {
-       
-        while (true)
-        {
-            bool isBoosting = movement.boostActive;
-            if (isBoosting && boostSlider.value > 0)
-            {
-                Debug.Log("Using Boost");
-                boostSlider.value -= fillRate;
-                yield return new WaitForSeconds(.1f);
-            }
-            else if (!isBoosting && boostSlider.value < maxBoost)
-            {
-                Debug.Log("Recovering Boost");
-                boostSlider.value += fillRate;
-                yield return new WaitForSeconds(.1f);
-            }
-        }
     }
 }

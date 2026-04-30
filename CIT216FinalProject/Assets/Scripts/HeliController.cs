@@ -1,3 +1,6 @@
+//4/29/26
+//Herman Pagan Alvarez
+//Controller for Helicopter
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,21 +25,9 @@ public class HeliController : MonoBehaviour
     //Set high enough to attack from distance
     public float attackDistance;
     private int health = 300;
-    private int damageAmount = 20;
+    private float damageAmount = 20f;
     public float missileSpeed;
-
-    private UnityAction<float> damageListener;
-
-    private void OnEnable()
-    {
-        damageListener = new UnityAction<float>(ApplyDamage);
-        EventManager.StartListening("EnemyDamager", damageListener);
-    }
-    private void OnDisable()
-    {
-        EventManager.StopListening("EnemyDamager", damageListener);
-
-    }
+    
     public float Health
     { 
         get { return health; }
@@ -49,9 +40,13 @@ public class HeliController : MonoBehaviour
             }
         }
     }
-
+    private void Awake()
+    {
+        player = GameObject.Find("Player");
+    }
     void Start()
     {
+        playerTransform = player.GetComponent<Transform>();
         agent = GetComponent<NavMeshAgent>();
         currentState = EnemyState.Patrol;
         ChangeState(EnemyState.Patrol);
@@ -138,6 +133,7 @@ public class HeliController : MonoBehaviour
                 Transform instance = Instantiate(missile, missileSpawn.position, missile.transform.rotation);
                 //Move Missile
                 instance.GetComponent<Rigidbody>().AddForce(direction * missileSpeed);
+                instance.GetComponent<MissileController>().damage = damageAmount;
             }   
 
             elapsedTime++;

@@ -1,4 +1,6 @@
-
+//4/29/26
+//Herman Pagan Alvarez
+//Meant to handle overarching gameplay elements (ex. scenes)
 using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
