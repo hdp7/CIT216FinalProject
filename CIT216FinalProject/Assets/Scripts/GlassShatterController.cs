@@ -6,19 +6,28 @@ public class GlassShatterController : MonoBehaviour
     private MeshRenderer mr;
     private bool isBroken = false;
     public ParticleSystem glassParticles;
+    private BoxCollider col;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        col = GetComponent<BoxCollider>();
         mr = GetComponent<MeshRenderer>();
 
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Shatter"))
+        //Only breaks when
+        if(other.gameObject.CompareTag("Shatter"))
         {
             StartCoroutine(Shatter());
+            //prevent repeat shatter effect
+            col.enabled = false;
+        }
+        else if (other.gameObject.CompareTag("EnemyProj"))
+        {
+            StartCoroutine(Shatter());
+            Destroy(other);
         }
     }
 

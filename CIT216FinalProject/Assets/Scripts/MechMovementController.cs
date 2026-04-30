@@ -27,13 +27,11 @@ public class MechMovementController : MonoBehaviour
     private bool onGround;
     public float gravity;
     private bool isShooting;
-    private bool boostActive = false;
+    public bool boostActive = false;
 
     public float lookSensitivity = 10f;
     public float minPitch = -40f;
     public float maxPitch = 80f;
-    public float maxBoost;
-    public float maxHealth;
     float normalAcceleration;
     float normalRotateSpeed;
     float normalJumpHeight;

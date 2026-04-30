@@ -31,6 +31,7 @@ public class GrowScale : MonoBehaviour
 
         // Ensure exact finish
         transform.localScale = maxSize;
+        Destroy(gameObject, .5f);
     }
 }
 

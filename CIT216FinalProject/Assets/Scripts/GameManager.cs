@@ -1,17 +1,11 @@
-//GameManager
-//Singleton and persistent object to manage game state
-//For high level control over game
-//--------------------------------------------------------------
+
 using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 
-//--------------------------------------------------------------
 public class GameManager : MonoBehaviour
 {
-    //--------------------------------------------------------------
-    //public properties
-    //C# property to retrieve currently active instance of object, if any
     public static GameManager Instance
     {
         get
@@ -20,14 +14,9 @@ public class GameManager : MonoBehaviour
             return instance;
         }
     }
-    //--------------------------------------------------------------
-    //Private variables
-    //--------------------------------------------------------------
-    //Internal reference to single active instance of object - for singleton behaviour
     private static GameManager instance = null;
 
-
-    // Called before Start on object creation -- singleton (just different way)
+    // Ensures only one GameManager exists
     void Awake()
     {
         //Check if there is an existing instance of this object
@@ -35,29 +24,35 @@ public class GameManager : MonoBehaviour
             DestroyImmediate(gameObject); //Delete duplicate
         else
         {
-            instance = this; //Make this object the only instance
-            DontDestroyOnLoad(gameObject); //Set as do not destroy
+            instance = this; 
+            DontDestroyOnLoad(gameObject); 
         }
     }
-    //--------------------------------------------------------------
-    // Use this for initialization
+
     void Start()
     {
 
     }
+    public void LoadLevel(string name)
+    {
+        SceneManager.LoadScene(name);
+    }
 
-    //--------------------------------------------------------------
-    //Restart Game
     public void RestartGame()
     {
         //Load first level
         SceneManager.LoadScene(0);
     }
-    //--------------------------------------------------------------
+
+    public void RestartLevel()
+    {
+        //Load first level
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    
     //Exit Game
     public void ExitGame()
     {
         Application.Quit();
     }
-    //--------------------------------------------------------------
 }

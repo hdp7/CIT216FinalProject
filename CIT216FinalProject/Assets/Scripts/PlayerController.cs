@@ -2,11 +2,13 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using static System.Net.Mime.MediaTypeNames;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController Instance { get; private set; }
     private float health;
-    public float boostAmount;
+    private float boostAmount;
     public float maxHealth;
     public float maxBoost;
     public bool isDead;
@@ -17,9 +19,10 @@ public class PlayerController : MonoBehaviour
 
     private ParticleSystem explosion;
     private ParticleSystem smoke;
-    public Canvas HUD;
+    public GameObject HUD;
     public Slider healthSlider;
     public Slider boostSlider;
+    public float fillRate;
 
     private UnityAction<float> damageListener;
 
@@ -36,7 +39,6 @@ public class PlayerController : MonoBehaviour
             {
                 Debug.Log("Player is Dead");
                 isDead = true;
-                GetComponent<MechMovementController>().enabled = false;
                 StartCoroutine("Death");
             }
         }
@@ -44,6 +46,7 @@ public class PlayerController : MonoBehaviour
 
     void OnEnable()
     {
+        movement = GetComponent<MechMovementController>();
         damageListener = new UnityAction<float>(TakeDamage);
         //subscribes to the event
         EventManager.StartListening("PlayerDamager", damageListener);
@@ -55,7 +58,12 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        health = -maxHealth;
+        StartCoroutine(Fill());
+        boostSlider.maxValue = maxBoost;
+        boostSlider.value = boostSlider.maxValue;
+        health = maxHealth;
+        healthSlider.maxValue = health;
+        healthSlider.value = health;
         Debug.Log("Health: " + health);
     }
 
@@ -76,14 +84,34 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        healthSlider.value = health;
-        boostSlider.value = boostAmount;
     }
     public void Death()
     {
         movement.enabled = false;
         explosion.Play();
         smoke.Play();
+        HUD.SetActive(false);
+        movement.enabled = false;
+    }
 
+    IEnumerator Fill()
+    {
+       
+        while (true)
+        {
+            bool isBoosting = movement.boostActive;
+            if (isBoosting && boostSlider.value > 0)
+            {
+                Debug.Log("Using Boost");
+                boostSlider.value -= fillRate;
+                yield return new WaitForSeconds(.1f);
+            }
+            else if (!isBoosting && boostSlider.value < maxBoost)
+            {
+                Debug.Log("Recovering Boost");
+                boostSlider.value += fillRate;
+                yield return new WaitForSeconds(.1f);
+            }
+        }
     }
 }
